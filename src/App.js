@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { citiesFilter } from "./utils/citiesFilter";
+import { citiesFilter } from "./utils/CitiesFilter";
 function App() {
   const [countriesSearch, setCountriesSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -48,9 +48,29 @@ function App() {
 
   return (
     <div className="App h-screen flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 bg-gradient-to-b from-gray-100 to-gray-300 flex items-start justify-center p-6">
-        {/* Horizontally Centered Input Section */}
-        <div className="flex items-center gap-5 bg-white w-[567px] h-20 rounded-[48px] shadow-md px-5 mt-10">
+      <div className="w-full md:w-1/2 bg-[#F3F4F6] from-gray-100 to-gray-300 flex items-center justify-center p-6">
+        <div className="w-[414px] h-[832px] rounded-[48px] bg-[rgba(255, 255, 255, 0.75)]">
+          <div className="w-[398px] h-[504px] flex flex-col">
+            <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px]">
+              <p className="text-[18px] text-[#9CA3AF] font-medium">
+                September 10, 2021
+              </p>
+              <p className="text-[48px] text-[#111827] font-extrabold">
+                Seattle
+              </p>
+            </div>
+          </div>
+          <div className="w-[215px] h-[230px] flex flex-col ml-[48px]">
+            <p className="text-[144px] font-extrabold bg-gradient-to-b from-[#111827] via-[#F9FAFB] to-[#6B7280] bg-clip-text text-transparent m-0 p-0 leading-none">
+              17°
+            </p>
+            <p className="text-[#FF8E27] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
+              Bright
+            </p>
+          </div>
+        </div>
+        {/* Input */}
+        <div className="fixed top-[40px] left-[830px] flex items-center gap-5 bg-white w-[567px] h-20 rounded-[48px] shadow-md px-5 mt-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"
@@ -87,7 +107,7 @@ function App() {
       </div>
 
       {/* Filtered Data */}
-      <div className="absolute top-[170px] left-[280px] w-[567px]  h-[220px] bg-white overflow-hidden rounded-3xl">
+      <div className="fixed top-[170px] left-[830px] w-[567px]  h-[220px] bg-white overflow-hidden rounded-3xl">
         {filteredData.map((city, index) => (
           <div
             key={index}
@@ -107,7 +127,28 @@ function App() {
         ))}
       </div>
 
-      <div className="w-full md:w-1/2 bg-gradient-to-b from-gray-800 to-black flex items-center justify-center p-6"></div>
+      <div className="w-full md:w-1/2 bg-gradient-to-b from-gray-800 to-black flex items-center justify-center p-6">
+        <div className="w-[414px] h-[832px] rounded-[48px] bg-[rgba(17,24,39,0.75)] flex flex-col">
+          <div className="w-[398px] h-[504px] flex flex-col">
+            <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px]">
+              <p className="text-[18px] text-[#9CA3AF] font-medium">
+                September 10, 2021
+              </p>
+              <p className="text-[48px] text-[#FFF] font-extrabold">Seattle</p>
+
+              <img src="moon.png" alt="Image of the moon" />
+            </div>
+          </div>
+          <div className="w-[215px] h-[230px] flex flex-col ml-[48px]">
+            <p className="text-[144px] font-extrabold bg-gradient-to-b from-[#F9FAFB] via-[#F9FAFB] to-[#F9FAFB00] bg-clip-text text-transparent m-0 p-0 leading-none">
+              17°
+            </p>
+            <p className="text-[#777CCE] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
+              Clear
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
