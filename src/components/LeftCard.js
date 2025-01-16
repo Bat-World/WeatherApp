@@ -32,24 +32,53 @@ const LeftCard = ({
               </svg>
             </div>
             <img
-              className="mt-[70px]"
+              className="mt-[65px] ml-[70px]"
               src="image.png"
               alt="Image of the moon"
             />
           </div>
         </div>
-        <div className="w-[340px] h-[230px] flex flex-col ml-[48px]">
-          <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#111827]  to-[#6B7280] bg-clip-text text-transparent m-0 p-0 leading-none">
+        <div className="w-[340px] h-auto flex flex-col ml-[48px] flex items-start">
+          <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#111827]  to-[#6B7280] bg-clip-text text-transparent m-0 p-0 leading-none  flex items-start">
             {weather.max_c !== undefined ? `${weather.max_c}°C` : "Loading..."}
           </p>
           <p className="text-[#FF8E27] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
             {weather.condition}
           </p>
         </div>
+        <div className="ml-[48px] flex mt-[60px]">
+          {" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#666666"
+          >
+            <path d="M580-240q25 0 42.5-17.5T640-300q0-25-17.5-42.5T580-360q-25 0-42.5 17.5T520-300q0 25 17.5 42.5T580-240Zm-202-2 260-260-56-56-260 260 56 56Zm2-198q25 0 42.5-17.5T440-500q0-25-17.5-42.5T380-560q-25 0-42.5 17.5T320-500q0 25 17.5 42.5T380-440ZM480-80q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-80q104 0 172-70.5T720-408q0-73-60.5-165T480-774Q361-665 300.5-573T240-408q0 107 68 177.5T480-160Zm0-320Z" />
+          </svg>
+          <p className="text-[#9CA3AF]"> Humidity {weather.humidity} %</p>
+        </div>
+        <div className="ml-[48px] flex items-start mt-[10px]">
+          {" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#666666"
+          >
+            <path d="M500-40q-25 0-42.5-17T440-99q0-12 4.5-23t13.5-19l42-39 42 39q9 8 13.5 19t4.5 23q0 25-17.5 42T500-40Zm-138-60-42-42 118-118 42 42-118 118Zm258-60-60-60 60-60 60 60-60 60Zm-360 0-60-60 60-60 60 60-60 60Zm40-160q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z" />
+          </svg>
+          <p className="text-[#9CA3AF]">
+            {" "}
+            Precipitation {weather.precipitation} mm
+          </p>
+        </div>
       </div>
 
       {/* Search Input */}
-      <div className="fixed top-[40px] left-[830px] flex items-center gap-5 bg-white w-[567px] h-20 rounded-[48px] shadow-md px-5 mt-10">
+      <div className="fixed top-[40px] left-[40%] flex items-center gap-5 bg-white w-[567px] h-20 rounded-[48px] shadow-md px-5 mt-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
@@ -87,7 +116,7 @@ const LeftCard = ({
 
       {/* Filtered Data */}
       {showCityContainer && (
-        <div className="fixed top-[170px] left-[830px] w-[567px]  h-[220px] bg-white overflow-hidden rounded-3xl">
+        <div className="absolute top-[170px] left-[40%] w-[30%]  h-[220px] bg-white overflow-hidden rounded-3xl">
           {filteredData.map((city, index) => (
             <div
               key={index}

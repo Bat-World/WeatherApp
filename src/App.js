@@ -31,13 +31,19 @@ function App() {
         min_c: result.forecast.forecastday[0].day.mintemp_c,
         condition: result.forecast.forecastday[0].day.condition.text,
         date: result.forecast.forecastday[0].date,
+        precipitation: result.current.precip_mm,
+        humidity: result.current.humidity,
+      
       };
+      console.log(result);
       setWeather(weatherData);
     } catch (error) {
       console.log("error", error);
     } finally {
       setWeatherLoading(false);
     }
+  console.log(weather.result);
+  
   };
 
   // console.log("API response:", result);
@@ -86,7 +92,7 @@ function App() {
   }, [selectedCity]);
 
   return (
-    <div className="App h-screen flex flex-col md:flex-row">
+    <div className="App h-screen flex flex-col md:flex-row relative">
       <LeftCard
         weather={weather}
         selectedCity={selectedCity}
