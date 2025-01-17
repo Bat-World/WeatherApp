@@ -117,7 +117,7 @@ const LeftCard = ({
 
       {/* Filtered Data */}
       {showCityContainer && (
-        <div className="absolute top-[170px] left-[75%] w-[50%]  h-[220px] bg-white overflow-hidden rounded-3xl z-20">
+        <div className="absolute top-[170px] left-[75%] w-[50%]  h-auto bg-white overflow-hidden rounded-3xl z-20">
           {filteredData.map((city, index) => (
             <div
               key={index}
