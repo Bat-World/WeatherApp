@@ -103,7 +103,6 @@ function App() {
   return (
     <div className="relative flex w-screen h-screen align-center justify-center overflow-hidden"> 
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[1340px] h-[1340px]"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[940px] h-[940px]"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[540px] h-[540px]"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[340px] h-[340px]"></div>
@@ -145,7 +144,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className=" w-2/4 h-screen bg-[#F3F4F6] flex justify-center items-center z-30">
+      <div className=" w-2/4 h-screen bg-[#F3F4F6] flex justify-center items-center ">
         <LeftCard
           weather={weather}
           selectedCity={selectedCity}
@@ -157,7 +156,7 @@ function App() {
      
         />
       </div>
-      <div className=" w-2/4 h-screen bg-black flex justify-center items-center z-20">
+      <div className=" w-2/4 h-screen bg-black flex justify-center items-center ">
         <RightCard
           weather={weather}
           selectedCity={selectedCity}

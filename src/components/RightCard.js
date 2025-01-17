@@ -10,12 +10,12 @@ const RightCard = ({
 }) => {
   return (
     <div className="w-full md:w-1/2 bg-transparent from-gray-800 to-black flex items-center justify-center p-6">
-      <div className="w-[414px] h-[832px] rounded-[48px] bg-[rgba(17,24,39,0.75)] flex flex-col">
+      <div className="w-[414px] h-[832px] rounded-[48px] bg-[rgba(17,24,39,0.75)] flex flex-col z-20">
         <div className="w-[398px] h-[504px] flex flex-col">
           <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px] flex items-start">
-          <p className="text-[18px] text-[#9CA3AF] font-medium">
-  {formatDate(weather.date)}
-</p>
+            <p className="text-[18px] text-[#9CA3AF] font-medium">
+              {formatDate(weather.date)}
+            </p>
 
             <div className="flex flex-row w-[320px] h-auto justify-between">
               <p className="text-[48px] text-[#FFF] font-extrabold items-center">
@@ -63,18 +63,18 @@ const RightCard = ({
         <div className="ml-[48px] flex items-start mt-[10px]">
           {" "}
           <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#666666"
-            >
-              <path d="M500-40q-25 0-42.5-17T440-99q0-12 4.5-23t13.5-19l42-39 42 39q9 8 13.5 19t4.5 23q0 25-17.5 42T500-40Zm-138-60-42-42 118-118 42 42-118 118Zm258-60-60-60 60-60 60 60-60 60Zm-360 0-60-60 60-60 60 60-60 60Zm40-160q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Z" />
-            </svg>
-            <p className="text-[#9CA3AF]">
-              {" "}
-              Precipitation {weather.precipitation} mm
-            </p>  
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#666666"
+          >
+            <path d="M500-40q-25 0-42.5-17T440-99q0-12 4.5-23t13.5-19l42-39 42 39q9 8 13.5 19t4.5 23q0 25-17.5 42T500-40Zm-138-60-42-42 118-118 42 42-118 118Zm258-60-60-60 60-60 60 60-60 60Zm-360 0-60-60 60-60 60 60-60 60Zm40-160q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Z" />
+          </svg>
+          <p className="text-[#9CA3AF]">
+            {" "}
+            Precipitation {weather.precipitation} mm
+          </p>
         </div>
       </div>
     </div>
