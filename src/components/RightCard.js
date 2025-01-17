@@ -29,9 +29,9 @@ const RightCard = ({
             </div>
 
             <img
-              className="mt-[70px] ml-[70px]"
-              src="moon.png"
-              alt="Image of the moon"
+              className="mt-[70px]"
+              src={weather.nightPhoto}
+              alt={`Image depicting ${weather.condition}`}
             />
           </div>
         </div>

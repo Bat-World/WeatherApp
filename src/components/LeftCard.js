@@ -32,9 +32,9 @@ const LeftCard = ({
               </svg>
             </div>
             <img
-              className="mt-[65px] ml-[70px]"
-              src="image.png"
-              alt="Image of the moon"
+              className="mt-[70px]"
+              src={weather.dayPhoto}
+              alt={`Image depicting ${weather.condition}`}
             />
           </div>
         </div>
