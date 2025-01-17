@@ -1,3 +1,6 @@
+import React from "react";
+import { formatDate } from "../utils/dateconvert";
+
 const RightCard = ({
   weather,
   selectedCity,
@@ -6,13 +9,14 @@ const RightCard = ({
   filteredData,
 }) => {
   return (
-    <div className="w-full md:w-1/2 bg-gradient-to-b from-gray-800 to-black flex items-center justify-center p-6">
+    <div className="w-full md:w-1/2 bg-transparent from-gray-800 to-black flex items-center justify-center p-6">
       <div className="w-[414px] h-[832px] rounded-[48px] bg-[rgba(17,24,39,0.75)] flex flex-col">
         <div className="w-[398px] h-[504px] flex flex-col">
           <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px] flex items-start">
-            <p className="text-[18px] text-[#9CA3AF] font-medium">
-              {weather.date}
-            </p>
+          <p className="text-[18px] text-[#9CA3AF] font-medium">
+  {formatDate(weather.date)}
+</p>
+
             <div className="flex flex-row w-[320px] h-auto justify-between">
               <p className="text-[48px] text-[#FFF] font-extrabold items-center">
                 {selectedCity}
@@ -29,7 +33,7 @@ const RightCard = ({
             </div>
 
             <img
-              className="mt-[70px]"
+              className="mt-[70px] ml-[60px]"
               src={weather.nightPhoto}
               alt={`Image depicting ${weather.condition}`}
             />
