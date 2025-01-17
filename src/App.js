@@ -144,7 +144,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className=" w-2/4 h-screen bg-[#F3F4F6] flex justify-center items-center ">
+      <div className=" w-2/4 h-screen bg-[#F3F4F6] flex justify-center items-center relative ">
         <LeftCard
           weather={weather}
           selectedCity={selectedCity}
@@ -153,18 +153,18 @@ function App() {
           showCityContainer={showCityContainer}
           handleChange={handleChange}
           handleCityClick={handleCityClick}
-     
         />
+              <div className="absolute w-[128px] h-[128px] bg-[#FF8E27] rounded-full right-[62%] bottom-[78%] z-10" ></div> 
       </div>
-      <div className=" w-2/4 h-screen bg-black flex justify-center items-center ">
+      <div className=" w-2/4 h-screen bg-black flex justify-center items-center relative">
         <RightCard
           weather={weather}
           selectedCity={selectedCity}
           loading={loading}
           handleChange={handleChange}
           filteredData={filteredData}
-          
         />
+           <div className="absolute w-[128px] h-[128px] bg-[#6E72C9] rounded-full left-[62%] top-[78%] z-10 " ></div>
       </div>
     </div>
   );
