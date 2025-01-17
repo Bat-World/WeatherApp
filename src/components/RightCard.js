@@ -11,7 +11,6 @@ const RightCard = ({
   return (
     <div className="w-full md:w-1/2 bg-transparent from-gray-800 to-black flex items-center justify-center p-6">
       <div className="w-[414px] h-[832px] rounded-[48px] bg-[#111827]/75  flex flex-col z-20 backdrop-blur-md  ">
-
         <div className="w-[398px] h-[504px] flex flex-col">
           <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px] flex items-start">
             <p className="text-[18px] text-[#9CA3AF] font-medium">
@@ -77,8 +76,8 @@ const RightCard = ({
             Precipitation {weather.precipitation} mm
           </p>
         </div>
-        </div>
-s
+      </div>
+      s
     </div>
   );
 };

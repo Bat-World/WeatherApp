@@ -12,7 +12,7 @@ const LeftCard = ({
 }) => {
   return (
     <div className="w-full md:w-1/2 bg-[#F3F4F6] flex items-center justify-center p-6">
-      <div className="w-[414px] h-[832px] rounded-[48px] bg-white z-20">
+      <div className="w-[414px] h-[832px] rounded-[48px] bg-white/75 shadow-lg backdrop-blur-sm z-20">
         <div className="w-[398px] h-[504px] flex flex-col">
           <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px] flex items-start">
             <p className="text-[18px] text-[#9CA3AF] font-medium">
@@ -79,7 +79,7 @@ const LeftCard = ({
       </div>
 
       {/* Search Input */}
-      <div className="fixed top-[40px] left-[35%] flex items-center gap-5 bg-white w-[30%] h-20 rounded-[48px] shadow-md px-5 mt-10 z-20">
+      <div className="fixed top-[40px] left-[37.5%] flex items-center gap-5 bg-white w-[25%] h-20 rounded-[48px] shadow-md px-5 mt-10 z-20">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
@@ -117,7 +117,7 @@ const LeftCard = ({
 
       {/* Filtered Data */}
       {showCityContainer && (
-        <div className="absolute top-[170px] left-[70%] w-[60%]  h-[220px] bg-white overflow-hidden rounded-3xl z-20">
+        <div className="absolute top-[170px] left-[75%] w-[50%]  h-[220px] bg-white overflow-hidden rounded-3xl z-20">
           {filteredData.map((city, index) => (
             <div
               key={index}

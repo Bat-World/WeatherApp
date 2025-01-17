@@ -16,8 +16,6 @@ function App() {
   const weatherApiKey = "17e23b96b1f34f329ad22138251501";
   const [showCityContainer, setShowCityContainer] = useState(false);
 
-
-
   const getWeather = async () => {
     setWeatherLoading(true);
 
@@ -98,13 +96,14 @@ function App() {
     getWeather();
   }, [selectedCity]);
 
-
-
   return (
-    <div className="relative flex w-screen h-screen align-center justify-center overflow-hidden"> 
+    <div className="relative flex w-screen h-screen align-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[940px] h-[940px]"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[540px] h-[540px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[2140px] h-[2140px] opacity-5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[1740px] h-[1740px] opacity-5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[1340px] h-[1340px] opacity-5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[940px] h-[940px] "></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[540px] h-[540px] "></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[340px] h-[340px]"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-full w-[140px] h-[140px]"></div>
         <div className="flex items-center justify-center w-[140px] h-[140px] bg-[#F3F4F6] rounded-full gap-x-4">
@@ -154,7 +153,7 @@ function App() {
           handleChange={handleChange}
           handleCityClick={handleCityClick}
         />
-              <div className="absolute w-[128px] h-[128px] bg-[#FF8E27] rounded-full right-[62%] bottom-[78%] z-10" ></div> 
+        <div className="absolute w-[128px] h-[128px] bg-[#FF8E27] rounded-full right-[62%] bottom-[78%] z-10"></div>
       </div>
       <div className=" w-2/4 h-screen bg-black flex justify-center items-center relative">
         <RightCard
@@ -164,7 +163,7 @@ function App() {
           handleChange={handleChange}
           filteredData={filteredData}
         />
-           <div className="absolute w-[128px] h-[128px] bg-[#6E72C9] rounded-full left-[62%] top-[78%] z-10 " ></div>
+        <div className="absolute w-[128px] h-[128px] bg-[#6E72C9] rounded-full left-[62%] top-[78%] z-10 "></div>
       </div>
     </div>
   );
