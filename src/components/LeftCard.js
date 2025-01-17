@@ -47,7 +47,7 @@ const LeftCard = ({
             {weather.condition}
           </p>
         </div>
-        <div className="ml-[48px] flex mt-[60px]">s
+        <div className="ml-[48px] flex mt-[60px]">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
