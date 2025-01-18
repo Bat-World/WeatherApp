@@ -12,6 +12,7 @@ const LeftCard = ({
 }) => {
   return (
     <div className="w-full md:w-1/2 bg-[#F3F4F6] flex items-center justify-center p-6">
+
       <div className="w-[414px] h-[832px] rounded-[48px] bg-white/75 shadow-lg backdrop-blur-sm z-20">
         <div className="w-[398px] h-[504px] flex flex-col">
           <div className="w-[174px] h-auto flex flex-col mt-[56px] ml-[48px] flex items-start">

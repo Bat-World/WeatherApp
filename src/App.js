@@ -98,6 +98,11 @@ function App() {
 
   return (
     <div className="relative flex w-screen h-screen align-center justify-center overflow-hidden">
+      {(loading || weatherLoading) && (
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spinCustom"></div>
+        </div>
+      )}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[2140px] h-[2140px] opacity-5"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-300 rounded-full w-[1740px] h-[1740px] opacity-5"></div>
