@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { citiesFilter } from "./utils/CitiesFilter";
 import LeftCard from "./components/LeftCard";
 import RightCard from "./components/RightCard";
@@ -16,6 +16,8 @@ function App() {
   const [weather, setWeather] = useState({});
   const weatherApiKey = "17e23b96b1f34f329ad22138251501";
   const [showCityContainer, setShowCityContainer] = useState(false);
+  const [unit, setUnit] = useState("C"); 
+
 
   const getWeather = async () => {
     setWeatherLoading(true);
@@ -37,6 +39,8 @@ function App() {
         ),
         max_c: result.forecast.forecastday[0].day.maxtemp_c,
         min_c: result.forecast.forecastday[0].day.mintemp_c,
+        max_f: result.forecast.forecastday[0].day.maxtemp_f,
+        min_f: result.forecast.forecastday[0].day.mintemp_f,
         condition: result.forecast.forecastday[0].day.condition.text,
         date: result.forecast.forecastday[0].date,
         precipitation: result.current.precip_mm,
@@ -97,6 +101,7 @@ function App() {
     getWeather();
   }, [selectedCity]);
 
+
   return (
     <div className="relative flex w-screen h-screen align-center justify-center overflow-hidden">
       {(loading || weatherLoading) && (
@@ -114,6 +119,8 @@ function App() {
           showCityContainer={showCityContainer}
           handleChange={handleChange}
           handleCityClick={handleCityClick}
+          unit={unit}
+          setUnit={setUnit}
         />
         <div className="absolute w-[128px] h-[128px] bg-[#FF8E27] rounded-full right-[62%] bottom-[78%] z-10"></div>
       </div>
@@ -124,6 +131,8 @@ function App() {
           loading={loading}
           handleChange={handleChange}
           filteredData={filteredData}
+          unit={unit}
+          setUnit={setUnit}
         />
         <div className="absolute w-[128px] h-[128px] bg-[#6E72C9] rounded-full left-[62%] top-[78%] z-10 "></div>
       </div>

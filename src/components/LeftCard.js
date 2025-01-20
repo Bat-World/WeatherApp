@@ -9,7 +9,16 @@ const LeftCard = ({
   showCityContainer,
   handleChange,
   handleCityClick,
+  unit,
+  setUnit,
 }) => {
+  const toggleUnit = (newUnit) => {
+    setUnit(newUnit);
+  };
+  const displayTemp =
+    unit === "C"
+      ? weather.max_c !== undefined ? `${weather.max_c}°C`: "Loading..."
+      : weather.max_f !== undefined ? `${weather.max_f}°F`: "Loading...";
   return (
     <div className="w-full md:w-1/2 bg-[#F3F4F6] flex items-center justify-center p-6">
 
@@ -41,8 +50,26 @@ const LeftCard = ({
           </div>
         </div>
         <div className="w-[340px] h-auto flex flex-col ml-[48px] flex items-start">
-          <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#111827]  to-[#6B7280] bg-clip-text text-transparent m-0 p-0 leading-none  flex items-start">
-            {weather.max_c !== undefined ? `${weather.max_c}°C` : "Loading..."}
+        <div className="flex direction-row gap-1">
+            <button
+              onClick={() => toggleUnit("C")}
+              className={`text-[#9CA3AF] ${
+                unit === "C" ? "font-bold underline" : ""
+              }`}
+            >
+              °C |
+            </button>
+            <button
+              onClick={() => toggleUnit("F")}
+              className={`text-[#9CA3AF] ${
+                unit === "F" ? "font-bold underline" : ""
+              }`}
+            >
+              °F
+            </button>
+          </div>
+          <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#111827]  to-[#6B7280] bg-clip-text text-transparent m-0 p-0 leading-none  flex items-start mt-[10px]">
+          {displayTemp}
           </p>
           <p className="text-[#FF8E27] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
             {weather.condition}
@@ -110,7 +137,7 @@ const LeftCard = ({
         </svg>
         <input
           disabled={loading}
-          className="flex-grow text-[32px] focus:outline-none bg-transparent placeholder-gray-400"
+          className="flex-grow text-[32px] font-medium focus:outline-none bg-transparent placeholder-gray-400"
           placeholder="Search"
           onChange={handleChange}
         />
