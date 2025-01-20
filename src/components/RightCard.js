@@ -15,8 +15,12 @@ const RightCard = ({
   };
   const displayTemp =
     unit === "C"
-      ? weather.min_c !== undefined ? `${weather.min_c}°C`: "Loading..."
-      : weather.min_f !== undefined ? `${weather.min_f}°F`: "Loading...";
+      ? weather.min_c !== undefined
+        ? `${weather.min_c}°C`
+        : "Loading..."
+      : weather.min_f !== undefined
+      ? `${weather.min_f}°F`
+      : "Loading...";
   return (
     <div className="w-full md:w-1/2 bg-transparent from-gray-800 to-black flex items-center justify-center p-6">
       <div className="w-[414px] h-[832px] rounded-[48px] bg-[#111827]/75  flex flex-col z-20 backdrop-blur-md  ">
@@ -49,7 +53,7 @@ const RightCard = ({
           </div>
         </div>
         <div className="w-[340px] h-auto flex flex-col ml-[48px] flex items-start">
-        <div className="flex direction-row gap-1">
+          <div className="flex direction-row gap-1">
             <button
               onClick={() => toggleUnit("C")}
               className={`text-[#9CA3AF] ${
@@ -69,7 +73,7 @@ const RightCard = ({
           </div>
 
           <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#F9FAFB] via-[#F9FAFB] to-[#F9FAFB00] bg-clip-text text-transparent m-0 p-0 leading-none mt-[10px]">
-          {displayTemp}
+            {displayTemp}
           </p>
           <p className="text-[#777CCE] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
             {weather.condition}
@@ -105,7 +109,6 @@ const RightCard = ({
           </p>
         </div>
       </div>
-      
     </div>
   );
 };
