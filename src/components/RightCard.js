@@ -41,7 +41,7 @@ const RightCard = ({
         </div>
         <div className="w-[340px] h-auto flex flex-col ml-[48px] flex items-start">
           <p className="text-[90px] font-extrabold bg-gradient-to-b from-[#F9FAFB] via-[#F9FAFB] to-[#F9FAFB00] bg-clip-text text-transparent m-0 p-0 leading-none">
-            {weather.min_c !== undefined ? `${weather.max_c}°C` : "Loading..."}
+            {weather.min_c !== undefined ? `${weather.min_c}°C` : "Loading..."}
           </p>
           <p className="text-[#777CCE] text-[24px] font-extrabold text-left ml-[5px] m-0 leading-none">
             {weather.condition}
