@@ -1,11 +1,11 @@
 
-import { getWeatherData } from "./utils/WeatherUtils";
-import { citiesFilter } from "./utils/CitiesFilter";
-import { useState, useEffect, use } from "react";
-import RightCard from "./components/RightCard";
-import LeftCard from "./components/LeftCard";
-import Back from "./components/Back";
+import { useEffect, useState } from "react";
 import "./App.css";
+import Back from "./components/Back";
+import LeftCard from "./components/LeftCard";
+import RightCard from "./components/RightCard";
+import { citiesFilter } from "./utils/CitiesFilter";
+import { getWeatherData } from "./utils/WeatherUtils";
 
 function App() {
   const [showCityContainer, setShowCityContainer] = useState(false);
@@ -81,7 +81,7 @@ function App() {
           <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spinCustom"></div>
         </div>
       )}
-      <Back />
+      <Back/>
       <div className=" w-2/4 h-screen bg-[#F3F4F6] flex justify-center items-center relative ">
         <LeftCard
           showCityContainer={showCityContainer}
